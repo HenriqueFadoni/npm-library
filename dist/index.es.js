@@ -28,7 +28,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n";
+var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_inputField__rQbh9 {\n  color: black;\n  font-size: 2rem;\n  background-color: white;\n  border-radius: 1rem;\n  border: 1px solid black;\n  padding: 1rem;\n  outline: none; }\n";
+var style = { "writer": "main_writer__2CpC1", "inputField": "main_inputField__rQbh9" };
 styleInject(css);
 
 var InputField = function InputField(props) {
@@ -39,9 +40,11 @@ var InputField = function InputField(props) {
 
   return React.createElement('input', {
     type: 'text',
-    className: 'inputfield',
+    className: style.inputField,
     name: name,
     placeholder: placeholder,
+    value: value,
+    onChange: onChangeHandler,
     required: true
   });
 };

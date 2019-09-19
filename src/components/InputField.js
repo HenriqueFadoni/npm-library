@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import '../sass/main.scss'
+import style from '../sass/main.scss'
 
 const InputField = props => {
   const { name = 'inputField', placeholder } = props
@@ -9,9 +9,11 @@ const InputField = props => {
   return (
     <input
       type="text"
-      className="inputfield"
+      className={style.inputField}
       name={name}
       placeholder={placeholder}
+      value={value}
+      onChange={onChangeHandler}
       required
     />
   );
