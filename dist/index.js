@@ -35,8 +35,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_invalidfield__3-0lV,\n.main_inputfield__GRrnu {\n  font-size: 1rem;\n  border: none;\n  padding: 1rem;\n  outline: none; }\n\n.main_inputfield__GRrnu {\n  color: black;\n  background-color: white; }\n\n.main_invalidfield__3-0lV {\n  color: white;\n  background-color: #ad2323; }\n";
-var style = { "writer": "main_writer__2CpC1", "invalidfield": "main_invalidfield__3-0lV", "inputfield": "main_inputfield__GRrnu" };
+var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_invalidfield__3-0lV,\n.main_inputfield__GRrnu {\n  font-size: 1rem;\n  border: none;\n  padding: 1rem;\n  outline: none; }\n\n.main_inputfield__GRrnu {\n  color: black;\n  background-color: white; }\n\n.main_invalidfield__3-0lV {\n  color: white;\n  background-color: #ad2323; }\n\n.main_switch__28bDE {\n  position: relative;\n  display: inline-block;\n  width: 6rem;\n  height: 3.4rem; }\n  .main_switch__28bDE input {\n    opacity: 0;\n    width: 0;\n    height: 0; }\n\n.main_slider__2c0J1 {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: 0.4s;\n  transition: 0.4s; }\n  .main_slider__2c0J1:before {\n    position: absolute;\n    content: \"\";\n    height: 2.4rem;\n    width: 2.6rem;\n    left: 0.4rem;\n    bottom: 0.4rem;\n    background-color: white;\n    -webkit-transition: 0.4s;\n    transition: 0.4s; }\n\n.main_slider__2c0J1.main_round__2danK {\n  border-radius: 3.4rem; }\n  .main_slider__2c0J1.main_round__2danK:before {\n    border-radius: 50%; }\n\ninput:checked + .main_slider__2c0J1 {\n  background-color: #2196f3; }\n\ninput:focus + .main_slider__2c0J1 {\n  box-shadow: 0 0 1px #2196f3; }\n\ninput:checked + .main_slider__2c0J1:before {\n  -webkit-transform: translateX(2.6rem);\n  -ms-transform: translateX(2.6rem);\n  transform: translateX(2.6rem); }\n";
+var style = { "writer": "main_writer__2CpC1", "invalidfield": "main_invalidfield__3-0lV", "inputfield": "main_inputfield__GRrnu", "switch": "main_switch__28bDE", "slider": "main_slider__2c0J1", "round": "main_round__2danK" };
 styleInject(css);
 
 var classCallCheck = function (instance, Constructor) {
@@ -168,5 +168,24 @@ InputField.proptypes = {
   isRequired: PropTypes.bool
 };
 
+var ToggleSwitch = function ToggleSwitch(props) {
+  return React__default.createElement(
+    'label',
+    { className: style.switch },
+    React__default.createElement('input', {
+      type: 'checkbox',
+      onClick: props.onClickHandler
+    }),
+    React__default.createElement('span', {
+      className: style.slider + ' ' + style.round
+    })
+  );
+};
+
+ToggleSwitch.proptypes = {
+  onClickHandler: PropTypes.func.isRequired
+};
+
 exports.InputField = InputField;
+exports.ToggleSwitch = ToggleSwitch;
 //# sourceMappingURL=index.js.map
