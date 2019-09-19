@@ -35,30 +35,118 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_inputField__rQbh9 {\n  color: black;\n  font-size: 2rem;\n  background-color: white;\n  border-radius: 1rem;\n  border: 1px solid black;\n  padding: 1rem;\n  outline: none; }\n";
-var style = { "writer": "main_writer__2CpC1", "inputField": "main_inputField__rQbh9" };
+var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_invalidfield__3-0lV,\n.main_inputfield__GRrnu {\n  font-size: 1rem;\n  color: black;\n  border: none;\n  padding: 1rem;\n  outline: none; }\n\n.main_inputfield__GRrnu {\n  background-color: white; }\n\n.main_invalidfield__3-0lV {\n  background-color: #ad2323; }\n";
+var style = { "writer": "main_writer__2CpC1", "invalidfield": "main_invalidfield__3-0lV", "inputfield": "main_inputfield__GRrnu" };
 styleInject(css);
 
-var InputField = function InputField(props) {
-  var _props$name = props.name,
-      name = _props$name === undefined ? 'inputField' : _props$name,
-      placeholder = props.placeholder;
-
-
-  return React__default.createElement('input', {
-    type: 'text',
-    className: style.inputField,
-    name: name,
-    placeholder: placeholder,
-    value: value,
-    onChange: onChangeHandler,
-    required: true
-  });
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
 };
+
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var inherits = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+var possibleConstructorReturn = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
+
+var InputField = function (_Component) {
+  inherits(InputField, _Component);
+
+  function InputField() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    classCallCheck(this, InputField);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = InputField.__proto__ || Object.getPrototypeOf(InputField)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      value: '',
+      isIncomplete: false
+    }, _this.onChangeHandler = function (event) {
+      var newValue = event.target.value;
+      if (newValue.trim() === '') {
+        _this.setState({ isIncomplete: true });
+      } else {
+        _this.setState({ isIncomplete: false });
+      }
+      _this.setState({ value: newValue });
+    }, _temp), possibleConstructorReturn(_this, _ret);
+  }
+
+  createClass(InputField, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          _props$name = _props.name,
+          name = _props$name === undefined ? 'inputField' : _props$name,
+          placeholder = _props.placeholder,
+          addStyle = _props.addStyle;
+      var _state = this.state,
+          value = _state.value,
+          isIncomplete = _state.isIncomplete;
+
+
+      return React__default.createElement('input', {
+        type: 'text',
+        name: name,
+        placeholder: placeholder,
+        style: addStyle,
+        className: isIncomplete ? style.invalidfield : style.inputfield,
+        onChange: this.onChangeHandler,
+        value: value,
+        required: true
+      });
+    }
+  }]);
+  return InputField;
+}(React.Component);
 
 InputField.proptypes = {
   name: PropTypes.string,
-  placeholder: PropTypes.string.isRequired
+  placeholder: PropTypes.string.isRequired,
+  addStyle: PropTypes.object
 };
 
 exports.InputField = InputField;

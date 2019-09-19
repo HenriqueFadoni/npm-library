@@ -1,9 +1,16 @@
-.inputField {
+.invalidfield,
+.inputfield {
   font-size: 1rem;
   color: $color-black;
-  background-color: $color-white;
-  border: 1px solid $color-black;
-  border-radius: 1rem;
+  border: none;
   padding: 1rem;
   outline: none;
+}
+
+.inputfield {
+  background-color: $color-white;
+}
+
+.invalidfield {
+  background-color: $color-red;
 }
