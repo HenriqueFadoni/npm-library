@@ -28,7 +28,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_invalidfield__3-0lV,\n.main_inputfield__GRrnu {\n  font-size: 1rem;\n  color: black;\n  border: none;\n  padding: 1rem;\n  outline: none; }\n\n.main_inputfield__GRrnu {\n  background-color: white; }\n\n.main_invalidfield__3-0lV {\n  background-color: #ad2323; }\n";
+var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_invalidfield__3-0lV,\n.main_inputfield__GRrnu {\n  font-size: 1rem;\n  border: none;\n  padding: 1rem;\n  outline: none; }\n\n.main_inputfield__GRrnu {\n  color: black;\n  background-color: white; }\n\n.main_invalidfield__3-0lV {\n  color: white;\n  background-color: #ad2323; }\n";
 var style = { "writer": "main_writer__2CpC1", "invalidfield": "main_invalidfield__3-0lV", "inputfield": "main_inputfield__GRrnu" };
 styleInject(css);
 
@@ -99,12 +99,15 @@ var InputField = function (_Component) {
       isIncomplete: false
     }, _this.onChangeHandler = function (event) {
       var newValue = event.target.value;
+
       if (newValue.trim() === '') {
         _this.setState({ isIncomplete: true });
       } else {
         _this.setState({ isIncomplete: false });
       }
+
       _this.setState({ value: newValue });
+      _this.props.getContent(newValue);
     }, _temp), possibleConstructorReturn(_this, _ret);
   }
 
@@ -115,22 +118,36 @@ var InputField = function (_Component) {
           _props$name = _props.name,
           name = _props$name === undefined ? 'inputField' : _props$name,
           placeholder = _props.placeholder,
-          addStyle = _props.addStyle;
+          addStyle = _props.addStyle,
+          _props$isRequired = _props.isRequired,
+          isRequired = _props$isRequired === undefined ? 'false' : _props$isRequired;
       var _state = this.state,
           value = _state.value,
           isIncomplete = _state.isIncomplete;
 
 
-      return React.createElement('input', {
-        type: 'text',
-        name: name,
-        placeholder: placeholder,
-        style: addStyle,
-        className: isIncomplete ? style.invalidfield : style.inputfield,
-        onChange: this.onChangeHandler,
-        value: value,
-        required: true
-      });
+      if (isRequired) {
+        return React.createElement('input', {
+          type: 'text',
+          name: name,
+          placeholder: placeholder,
+          style: addStyle,
+          className: isIncomplete ? style.invalidfield : style.inputfield,
+          onChange: this.onChangeHandler,
+          value: value,
+          required: true
+        });
+      } else {
+        return React.createElement('input', {
+          type: 'text',
+          name: name,
+          placeholder: placeholder,
+          style: addStyle,
+          className: style.inputfield,
+          onChange: this.onChangeHandler,
+          value: value
+        });
+      }
     }
   }]);
   return InputField;
@@ -139,7 +156,9 @@ var InputField = function (_Component) {
 InputField.proptypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
-  addStyle: PropTypes.object
+  addStyle: PropTypes.object,
+  getContent: PropTypes.func.isRequired,
+  isRequired: PropTypes.bool
 };
 
 export { InputField };
