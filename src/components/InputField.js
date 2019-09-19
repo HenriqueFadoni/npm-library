@@ -29,7 +29,10 @@ class InputField extends Component {
       addStyle,
       isRequired = 'false'
     } = this.props
-    const { value, isIncomplete } = this.state
+    const {
+      value,
+      isIncomplete
+    } = this.state
 
     if (isRequired) {
       return (
