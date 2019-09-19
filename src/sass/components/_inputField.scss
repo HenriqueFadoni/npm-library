@@ -1,16 +1,17 @@
 .invalidfield,
 .inputfield {
   font-size: 1rem;
-  color: $color-black;
   border: none;
   padding: 1rem;
   outline: none;
 }
 
 .inputfield {
+  color: $color-black;
   background-color: $color-white;
 }
 
 .invalidfield {
+  color: $color-white;
   background-color: $color-red;
 }
