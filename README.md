@@ -29,6 +29,29 @@ class Example extends Component {
 }
 ```
 
+## Components Requirements
+
+### Alert 
+- alertText [Required] (**String**): Text that will be inputed in the Alert
+
+### Button
+- btnType [Optional] (**String**): Type of the button (submit, reset, **button** = default)
+- btnText [Required] (**String**): Text inside the button
+- onClickHandler [Required] (**Function**): Action triggered after click
+
+### InputField
+- name [Optional] (**String**): Name of the Input (**inputField** = default)
+- placeholder [Required] (**String**): PlaceHolder inside the inputField
+- addStyle [Optional] (**Object**): Object containing additional styling (**null** = default)
+- getContent [Required] (**Function**): Function triggered after user change
+- isRequired [Optional] (**Boolean**): To set a Field as required (**false** = default)
+
+### Notice 
+- noticeText [Required] (**String**): Text that will be inputed in the Notice
+
+### ToggleSwitch
+- onClickHandler [Required] (**Function**): Action triggered after click
+
 ## License
 
 MIT © [Henrique Fadoni](https://github.com/HenriqueFadoni)
