@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import style from '../sass/main.scss'
 
-class Alert extends Component {
+class Notice extends Component {
   state = {
     isClosed: false
   }
@@ -12,7 +12,7 @@ class Alert extends Component {
 
   render() {
     const { isClosed } = this.state
-    const { alertText } = this.props
+    const { noticeText } = this.props
 
     return (
       <div
@@ -21,10 +21,10 @@ class Alert extends Component {
             ? { display: "none" }
             : null
         }
-        className={style.alert}
+        className={style.notice}
       >
         <div className={style.content}>
-          <h3>{alertText}</h3>
+          <h3>{noticeText}</h3>
         </div>
         <span
           className={style.closebtn}
@@ -35,8 +35,8 @@ class Alert extends Component {
   }
 }
 
-export default Alert
+export default Notice
 
-Alert.proptypes = {
-  alertText: PropTypes.string.isRequired
+Notice.proptypes = {
+  noticeText: PropTypes.string.isRequired
 }

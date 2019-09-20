@@ -1,3 +1,4 @@
+.notice,
 .alert {
   display: flex;
   flex-direction: row;
@@ -5,7 +6,14 @@
 
   padding: 2rem;
   color: $color-white;
+}
+
+.alert {
   background-color: $color-red;
+}
+
+.notice {
+  background-color: $color-orange;
 }
 
 .content {
@@ -15,12 +23,16 @@
 }
 
 .closebtn {
-  margin-left: 1.5rem;
-  color: $color-white;
+  line-height: 2rem;
   font-weight: bold;
   font-size: 2.2rem;
-  line-height: 2rem;
+  color: $color-white;
+
+  margin-left: 1.5rem;
   cursor: pointer;
+
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
 
   &:hover {
     color: $color-black;
