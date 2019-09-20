@@ -28,8 +28,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_invalidfield__3-0lV,\n.main_inputfield__GRrnu {\n  font-size: 1rem;\n  border: none;\n  padding: 1rem;\n  outline: none; }\n\n.main_inputfield__GRrnu {\n  color: black;\n  background-color: white; }\n\n.main_invalidfield__3-0lV {\n  color: white;\n  background-color: #ad2323; }\n\n.main_switch__28bDE {\n  position: relative;\n  display: inline-block;\n  width: 6rem;\n  height: 3.4rem; }\n  .main_switch__28bDE input {\n    opacity: 0;\n    width: 0;\n    height: 0; }\n\n.main_slider__2c0J1 {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: 0.4s;\n  transition: 0.4s; }\n  .main_slider__2c0J1:before {\n    position: absolute;\n    content: \"\";\n    height: 2.4rem;\n    width: 2.6rem;\n    left: 0.4rem;\n    bottom: 0.4rem;\n    background-color: white;\n    -webkit-transition: 0.4s;\n    transition: 0.4s; }\n\n.main_slider__2c0J1.main_round__2danK {\n  border-radius: 3.4rem; }\n  .main_slider__2c0J1.main_round__2danK:before {\n    border-radius: 50%; }\n\ninput:checked + .main_slider__2c0J1 {\n  background-color: #2196f3; }\n\ninput:focus + .main_slider__2c0J1 {\n  box-shadow: 0 0 1px #2196f3; }\n\ninput:checked + .main_slider__2c0J1:before {\n  -webkit-transform: translateX(2.6rem);\n  -ms-transform: translateX(2.6rem);\n  transform: translateX(2.6rem); }\n";
-var style = { "writer": "main_writer__2CpC1", "invalidfield": "main_invalidfield__3-0lV", "inputfield": "main_inputfield__GRrnu", "switch": "main_switch__28bDE", "slider": "main_slider__2c0J1", "round": "main_round__2danK" };
+var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_invalidfield__3-0lV,\n.main_inputfield__GRrnu {\n  font-size: 1rem;\n  border: none;\n  padding: 1rem;\n  outline: none; }\n\n.main_inputfield__GRrnu {\n  color: black;\n  background-color: white; }\n\n.main_invalidfield__3-0lV {\n  color: white;\n  background-color: #f44336; }\n\n.main_switch__28bDE {\n  position: relative;\n  display: inline-block;\n  width: 6rem;\n  height: 3.4rem; }\n  .main_switch__28bDE input {\n    opacity: 0;\n    width: 0;\n    height: 0; }\n\n.main_slider__2c0J1 {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: 0.4s;\n  transition: 0.4s; }\n  .main_slider__2c0J1:before {\n    position: absolute;\n    content: \"\";\n    height: 2.4rem;\n    width: 2.6rem;\n    left: 0.4rem;\n    bottom: 0.4rem;\n    background-color: white;\n    -webkit-transition: 0.4s;\n    transition: 0.4s; }\n\n.main_slider__2c0J1.main_round__2danK {\n  border-radius: 3.4rem; }\n  .main_slider__2c0J1.main_round__2danK:before {\n    border-radius: 50%; }\n\ninput:checked + .main_slider__2c0J1 {\n  background-color: #2196f3; }\n\ninput:focus + .main_slider__2c0J1 {\n  box-shadow: 0 0 1px #2196f3; }\n\ninput:checked + .main_slider__2c0J1:before {\n  -webkit-transform: translateX(2.6rem);\n  -ms-transform: translateX(2.6rem);\n  transform: translateX(2.6rem); }\n\n.main_alert__1z5rd {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  padding: 2rem;\n  color: white;\n  background-color: #f44336; }\n\n.main_content__Rps7w {\n  display: flex;\n  flex-direction: row;\n  align-items: center; }\n  .main_content__Rps7w h3 {\n    margin-left: 1rem; }\n\n.main_closebtn__2IBcD {\n  margin-left: 1.5rem;\n  color: white;\n  font-weight: bold;\n  font-size: 2.2rem;\n  line-height: 2rem;\n  cursor: pointer; }\n  .main_closebtn__2IBcD:hover {\n    color: black; }\n";
+var style = { "writer": "main_writer__2CpC1", "invalidfield": "main_invalidfield__3-0lV", "inputfield": "main_inputfield__GRrnu", "switch": "main_switch__28bDE", "slider": "main_slider__2c0J1", "round": "main_round__2danK", "alert": "main_alert__1z5rd", "content": "main_content__Rps7w", "closebtn": "main_closebtn__2IBcD" };
 styleInject(css);
 
 var classCallCheck = function (instance, Constructor) {
@@ -179,5 +179,66 @@ ToggleSwitch.proptypes = {
   onClickHandler: PropTypes.func.isRequired
 };
 
-export { InputField, ToggleSwitch };
+var Alert = function (_Component) {
+  inherits(Alert, _Component);
+
+  function Alert() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    classCallCheck(this, Alert);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = Alert.__proto__ || Object.getPrototypeOf(Alert)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      isClosed: false
+    }, _this.onClickHandler = function () {
+      _this.setState({ isClosed: true });
+    }, _temp), possibleConstructorReturn(_this, _ret);
+  }
+
+  createClass(Alert, [{
+    key: 'render',
+    value: function render() {
+      var isClosed = this.state.isClosed;
+      var alertText = this.props.alertText;
+
+
+      return React.createElement(
+        'div',
+        {
+          style: isClosed ? { display: "none" } : null,
+          className: style.alert
+        },
+        React.createElement(
+          'div',
+          { className: style.content },
+          React.createElement(
+            'h3',
+            null,
+            alertText
+          )
+        ),
+        React.createElement(
+          'span',
+          {
+            className: style.closebtn,
+            onClick: this.onClickHandler
+          },
+          '\xD7'
+        )
+      );
+    }
+  }]);
+  return Alert;
+}(Component);
+
+Alert.proptypes = {
+  alertText: PropTypes.string.isRequired
+};
+
+export { InputField, ToggleSwitch, Alert };
 //# sourceMappingURL=index.es.js.map
