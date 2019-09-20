@@ -28,8 +28,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_invalidfield__3-0lV,\n.main_inputfield__GRrnu {\n  font-size: 1rem;\n  border: none;\n  padding: 1rem;\n  outline: none; }\n\n.main_inputfield__GRrnu {\n  color: black;\n  background-color: white; }\n\n.main_invalidfield__3-0lV {\n  color: white;\n  background-color: #f44336; }\n\n.main_switch__28bDE {\n  position: relative;\n  display: inline-block;\n  width: 6rem;\n  height: 3.4rem; }\n  .main_switch__28bDE input {\n    opacity: 0;\n    width: 0;\n    height: 0; }\n\n.main_slider__2c0J1 {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: 0.4s;\n  transition: 0.4s; }\n  .main_slider__2c0J1:before {\n    position: absolute;\n    content: \"\";\n    height: 2.4rem;\n    width: 2.6rem;\n    left: 0.4rem;\n    bottom: 0.4rem;\n    background-color: white;\n    -webkit-transition: 0.4s;\n    transition: 0.4s; }\n\n.main_slider__2c0J1.main_round__2danK {\n  border-radius: 3.4rem; }\n  .main_slider__2c0J1.main_round__2danK:before {\n    border-radius: 50%; }\n\ninput:checked + .main_slider__2c0J1 {\n  background-color: #2196f3; }\n\ninput:focus + .main_slider__2c0J1 {\n  box-shadow: 0 0 1px #2196f3; }\n\ninput:checked + .main_slider__2c0J1:before {\n  -webkit-transform: translateX(2.6rem);\n  -ms-transform: translateX(2.6rem);\n  transform: translateX(2.6rem); }\n\n.main_notice__3oic2,\n.main_alert__1z5rd {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  padding: 2rem;\n  color: white; }\n\n.main_alert__1z5rd {\n  background-color: #f44336; }\n\n.main_notice__3oic2 {\n  background-color: #d48f35; }\n\n.main_content__Rps7w {\n  display: inherit;\n  align-items: center;\n  font-size: 1.2rem; }\n\n.main_closebtn__2IBcD {\n  line-height: 2rem;\n  font-weight: bold;\n  font-size: 2.2rem;\n  color: white;\n  margin-left: 1.5rem;\n  cursor: pointer;\n  transition: all 0.2s;\n  -webkit-transition: all 0.2s; }\n  .main_closebtn__2IBcD:hover {\n    color: black; }\n";
-var style = { "writer": "main_writer__2CpC1", "invalidfield": "main_invalidfield__3-0lV", "inputfield": "main_inputfield__GRrnu", "switch": "main_switch__28bDE", "slider": "main_slider__2c0J1", "round": "main_round__2danK", "notice": "main_notice__3oic2", "alert": "main_alert__1z5rd", "content": "main_content__Rps7w", "closebtn": "main_closebtn__2IBcD" };
+var css = "*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit; }\n\nhtml {\n  font-size: 62.5%;\n  font-weight: 300; }\n\na,\nbutton {\n  outline: none;\n  cursor: pointer; }\n\n.main_writer__2CpC1 {\n  color: blue;\n  margin: 2rem; }\n\n.main_invalidfield__3-0lV,\n.main_inputfield__GRrnu {\n  font-size: 1rem;\n  border: none;\n  padding: 1rem;\n  outline: none; }\n\n.main_inputfield__GRrnu {\n  color: black;\n  background-color: white; }\n\n.main_invalidfield__3-0lV {\n  color: white;\n  background-color: #f44336; }\n\n.main_switch__28bDE {\n  position: relative;\n  display: inline-block;\n  width: 6rem;\n  height: 3.4rem; }\n  .main_switch__28bDE input {\n    opacity: 0;\n    width: 0;\n    height: 0; }\n\n.main_slider__2c0J1 {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: 0.4s;\n  transition: 0.4s; }\n  .main_slider__2c0J1:before {\n    position: absolute;\n    content: \"\";\n    height: 2.4rem;\n    width: 2.6rem;\n    left: 0.4rem;\n    bottom: 0.4rem;\n    background-color: white;\n    -webkit-transition: 0.4s;\n    transition: 0.4s; }\n\n.main_slider__2c0J1.main_round__2danK {\n  border-radius: 3.4rem; }\n  .main_slider__2c0J1.main_round__2danK:before {\n    border-radius: 50%; }\n\ninput:checked + .main_slider__2c0J1 {\n  background-color: #2196f3; }\n\ninput:focus + .main_slider__2c0J1 {\n  box-shadow: 0 0 1px #2196f3; }\n\ninput:checked + .main_slider__2c0J1:before {\n  -webkit-transform: translateX(2.6rem);\n  -ms-transform: translateX(2.6rem);\n  transform: translateX(2.6rem); }\n\n.main_notice__3oic2,\n.main_alert__1z5rd {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  padding: 2rem;\n  color: white; }\n\n.main_alert__1z5rd {\n  background-color: #f44336; }\n\n.main_notice__3oic2 {\n  background-color: #d48f35; }\n\n.main_content__Rps7w {\n  display: inherit;\n  align-items: center;\n  font-size: 1.2rem; }\n\n.main_closebtn__2IBcD {\n  line-height: 2rem;\n  font-weight: bold;\n  font-size: 2.2rem;\n  color: white;\n  margin-left: 1.5rem;\n  cursor: pointer;\n  transition: all 0.2s;\n  -webkit-transition: all 0.2s; }\n  .main_closebtn__2IBcD:hover {\n    color: black; }\n\n.main_button__33J0q {\n  padding: 1rem;\n  font-size: 1.4rem;\n  color: #2196f3;\n  border: 0.4rem solid #2196f3;\n  transition: transform 0.2s ease-in; }\n  .main_button__33J0q:hover {\n    transform: scale(1.1); }\n  .main_button__33J0q:active {\n    transform: scale(0.9); }\n";
+var style = { "writer": "main_writer__2CpC1", "invalidfield": "main_invalidfield__3-0lV", "inputfield": "main_inputfield__GRrnu", "switch": "main_switch__28bDE", "slider": "main_slider__2c0J1", "round": "main_round__2danK", "notice": "main_notice__3oic2", "alert": "main_alert__1z5rd", "content": "main_content__Rps7w", "closebtn": "main_closebtn__2IBcD", "button": "main_button__33J0q" };
 styleInject(css);
 
 var classCallCheck = function (instance, Constructor) {
@@ -301,5 +301,29 @@ Notice.proptypes = {
   noticeText: PropTypes.string.isRequired
 };
 
-export { InputField, ToggleSwitch, Alert, Notice };
+var Button = function Button(props) {
+  var _props$btnType = props.btnType,
+      btnType = _props$btnType === undefined ? "button" : _props$btnType,
+      btnText = props.btnText,
+      onClickHandler = props.onClickHandler;
+
+
+  return React.createElement(
+    'button',
+    {
+      type: btnType,
+      className: style.button,
+      onClick: onClickHandler
+    },
+    btnText
+  );
+};
+
+Button.proptypes = {
+  btnType: PropTypes.string,
+  btnText: PropTypes.string.isRequired,
+  onClickHandler: PropTypes.func.isRequired
+};
+
+export { InputField, ToggleSwitch, Alert, Notice, Button };
 //# sourceMappingURL=index.es.js.map
